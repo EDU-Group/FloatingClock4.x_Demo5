@@ -10,7 +10,7 @@
     <Window.Resources>
         <Storyboard x:Key="a_home_start">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-1179"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-1179"/> 
                 <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0">
                     <SplineDoubleKeyFrame.KeySpline>
                         <KeySpline ControlPoint1="0.69,0" ControlPoint2="0.28,1"/>
