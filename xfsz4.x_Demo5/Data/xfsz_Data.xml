@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Data>
+	<UsingConfig FileName="[null]"></UsingConfig>
+	<Time Format="hh:mm:ss" Font="[null]"/>
+	<Date Format="yyyy/MM/dd dddd" Font="[null]"/>
+	<Theme Name="xfsz:#3"/>
+	<Window Top="False"/>
+	<ClockWIndow Top="True" Lock="False" CloseWindowMode="Close" HoldTime="300"/>
+	<Start Windows="False" ClockWindowMode="Close"/>
+	<Update Enable="True"/>
+	<Server Mode="IPv4"/>
+	<App Ver="4.0" Tag="True"/>
+</Data>

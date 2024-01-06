@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xfsz_config>
+	<ConfigInfo Name="附加外观配置项" Info=""/>
+	<theme Name="附加1">
+		<Background tl="16" tr="16" bl="16" br="16">
+			<BgColor>
+				<Start Color="#00000000"/>
+				<End Color="#00000000"/>
+			</BgColor>
+		</Background>
+	</theme>
+	<theme Name="附加2">
+		<Background tl="0" tr="0" bl="0" br="0">
+			<BgColor>
+				<Start Color="#ff000000"/>
+				<End Color="#ffffffff"/>
+			</BgColor>
+			<BgImage>
+				[null]
+			</BgImage>
+		</Background>
+		<Time>
+			<Font>
+				[null]
+			</Font>
+			<BgCloor>
+				<Start Color="#00000000"/>
+				<End Color="#00000000"/>
+			</BgCloor>
+			<FontColor>
+				<Start Color="#ffffffff"/>
+				<End Color="#ffffffff"/>
+			</FontColor>
+		</Time>
+		<Date>
+			<Font>
+				[null]
+			</Font>
+			<BgCloor>
+				<Start Color="#00000000"/>
+				<End Color="#00000000"/>
+			</BgCloor>
+			<FontColor>
+				<Start Color="#ffffffff"/>
+				<End Color="#ffffffff"/>
+			</FontColor>
+		</Date>
+	</theme>
+</xfsz_config>
