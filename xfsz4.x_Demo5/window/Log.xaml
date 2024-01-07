@@ -1,0 +1,23 @@
+﻿<Window x:Class="xfsz4.x_Demo5.window.Log"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:xfsz4.x_Demo5.window"
+        mc:Ignorable="d"
+        Title="Log" Height="450" Width="800" Loaded="Window_Loaded" Topmost="{Binding IsChecked, ElementName=checkBox}">
+    <Grid>
+        <RichTextBox x:Name="rtb" Margin="10,10,10,50" FontSize="12" FontFamily="Cascadia Code" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Background="WhiteSmoke" BorderBrush="#FFD4D4D4" Padding="0,7,2,7" ScrollViewer.CanContentScroll="True">
+            <FlowDocument Focusable="True" LineHeight="4">
+                <Paragraph x:Name="info" Background="#FFECECEC" BorderBrush="#FF928282" BorderThickness="8,2,2,2" FontSize="14">(13:00:00)[Info]日志测试-消息</Paragraph>
+                <Paragraph x:Name="warn" Background="#FFFBD6B1" BorderBrush="#FFDC843A" BorderThickness="8,2,2,2" FontSize="14">(13:00:00)[Warn]日志测试-警告</Paragraph>
+                <Paragraph x:Name="error" Background="#FFFD8C8C" BorderBrush="#FFCE1F1F" BorderThickness="8,2,2,2" FontSize="14">(13:00:00)[Error]日志测试-错误</Paragraph>
+                <Paragraph x:Name="stop" Background="#FFFF3333" BorderBrush="#FF2F0505" BorderThickness="8,2,2,2" FontSize="14">(13:00:00)[Stop]日志测试-无法继续运行</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button Content="结束时钟" HorizontalAlignment="Right" Height="35" Margin="0,0,95,10" VerticalAlignment="Bottom" Width="80" Background="WhiteSmoke" BorderBrush="#FFCCCCCC" Click="Button_Click_1"/>
+        <Button Content="结束主窗口" HorizontalAlignment="Right" Height="35" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="80" Background="WhiteSmoke" BorderBrush="#FFCCCCCC" Click="Button_Click_2"/>
+        <Button Content="彻底结束" HorizontalAlignment="Right" Height="35" Margin="0,0,180,10" VerticalAlignment="Bottom" Width="80" Background="WhiteSmoke" BorderBrush="#FFCCCCCC" Click="Button_Click_1"/>
+        <CheckBox x:Name="checkBox" Content="置顶的窗口" HorizontalAlignment="Left" Height="25" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="135" IsChecked="True" Background="Black" BorderBrush="#FF30D2B1"/>
+    </Grid>
+</Window>

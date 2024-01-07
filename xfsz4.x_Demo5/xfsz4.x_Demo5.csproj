@@ -221,6 +221,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\xfsz_Core\xfsz_Core.csproj" />
     <ProjectReference Include="..\xfsz_xml\xfsz_xml.csproj" />
   </ItemGroup>
 

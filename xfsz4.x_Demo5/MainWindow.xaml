@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:xfsz4.x_Demo5"
         mc:Ignorable="d"
         Title="悬浮时钟-Rabbit" Height="680" Width="1160"
-        xmlns:hc="https://handyorg.github.io/handycontrol" Icon="/img/clock.png" WindowStartupLocation="CenterScreen" MinWidth="1160" MinHeight="684" Initialized="Window_Initialized" Closed="window_Closed">
+        xmlns:hc="https://handyorg.github.io/handycontrol" Icon="/img/clock.png" WindowStartupLocation="CenterScreen" MinWidth="1160" MinHeight="684" Initialized="Window_Initialized" Closed="window_Closed" Loaded="Window_Loaded">
     <Window.Resources>
         <Storyboard x:Key="a_home_start">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-1179"/> 
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-1179"/>
                 <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0">
                     <SplineDoubleKeyFrame.KeySpline>
                         <KeySpline ControlPoint1="0.69,0" ControlPoint2="0.28,1"/>
@@ -318,7 +318,7 @@
                             <Border Background="#99FF8484" BorderBrush="#FF8C8C8C" BorderThickness="2,2,2,2" CornerRadius="8,8,8,8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="230" Width="488"/>
                             <Image Source="/img/warring.png" Margin="10,10,412,138" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Height="42"/>
                             <TextBlock Margin="58,13,0,0" Text="提示" FontSize="24" VerticalAlignment="Top" Width="402" HorizontalAlignment="Left"/>
-                            <TextBlock Text="无代码，功能不可用 &#13;项目创建日期：2024/1/1 00:59:18 " FontSize="16" Margin="0,57,0,0" HorizontalAlignment="Center" Width="468" Height="163" VerticalAlignment="Top"/>
+                            <TextBlock Text="部分基础功能目前可以正常使用 &#13;项目创建日期：2024/1/1 00:59:18 " FontSize="16" Margin="0,57,0,0" HorizontalAlignment="Center" Width="468" Height="163" VerticalAlignment="Top"/>
                         </Grid>
                     </Grid>
                 </TabItem>
@@ -332,6 +332,7 @@
                                 <TranslateTransform/>
                             </TransformGroup>
                         </Grid.RenderTransform>
+                        <Button Width="115" HorizontalAlignment="Left" Margin="-1,-37,0,0" VerticalAlignment="Top" Background="#FFFBFBFB" BorderBrush="#FF8E8E8E" Content="恢复默认值"></Button>
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="377,455,0,0">重命名和新外观名称</TextBlock>
                         <hc:TextBox x:Name="rename" Margin="490,448,0,0" Background="#FFFBFBFB" BorderBrush="#FF8E8E8E" VerticalAlignment="Top" HorizontalAlignment="Left" Width="186" VerticalContentAlignment="Top"/>
                         <Button HorizontalAlignment="Left" Margin="681,448,0,0" VerticalAlignment="Top" Width="88" Background="#FFFBFBFB" BorderBrush="#FF8E8E8E" Padding="0,0,0,0">
@@ -386,13 +387,13 @@
                         </hc:ColorPicker>
                         <TextBlock Text="颜色设置" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,62,0,0" FontSize="14"></TextBlock>
                         <ComboBox x:Name="Colorc" Margin="104,55,0,0" Background="#FFFBFBFB" BorderBrush="#FF8E8E8E" SelectedIndex="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190">
-                            <ComboBoxItem Content="时间字体"></ComboBoxItem>
-                            <ComboBoxItem Content="日期字体"></ComboBoxItem>
-                            <ComboBoxItem Content="关闭按钮背景"></ComboBoxItem>
-                            <ComboBoxItem Content="关闭按钮边框"></ComboBoxItem>
-                            <ComboBoxItem Content="纯色背景"></ComboBoxItem>
-                            <ComboBoxItem Content="渐变背景起点"></ComboBoxItem>
-                            <ComboBoxItem Content="渐变背景终点"></ComboBoxItem>
+                            <ComboBoxItem Content="时间字体" Selected="ComboBoxItem_Selected"></ComboBoxItem>
+                            <ComboBoxItem Content="日期字体" Selected="CB_DateColor"></ComboBoxItem>
+                            <ComboBoxItem Content="关闭按钮背景" Selected="CB_ButtonBG"></ComboBoxItem>
+                            <ComboBoxItem Content="关闭按钮边框" Selected="CB_ButtonBorder"></ComboBoxItem>
+                            <ComboBoxItem Content="纯色背景" Selected="CB_BG"></ComboBoxItem>
+                            <ComboBoxItem Content="渐变背景起点" Selected="CB_BGstart"></ComboBoxItem>
+                            <ComboBoxItem Content="渐变背景终点" Selected="CB_BGend"></ComboBoxItem>
 
                         </ComboBox>
                         <Label Background="{x:Null}" BorderBrush="{x:Null}" Content="效果预览" HorizontalAlignment="Right" Margin="0,240,174,0" VerticalAlignment="Top" FontSize="20" Height="43" Width="102"/>
@@ -407,7 +408,7 @@
                             </Border>
                             <Label x:Name="viewdate" Background="{x:Null}" BorderBrush="{x:Null}" Content="2024/1/1 星期一" FontSize="22" Margin="0,103,0,0" VerticalAlignment="Top" Height="40" Width="338"></Label>
                             <TextBlock x:Name="viewtime" Text="13:00:00" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,38,0,0"></TextBlock>
-                            <Button HorizontalAlignment="Left" Margin="296,10,0,0" VerticalAlignment="Top" Width="32" Height="32" Background="#7FFFFFFF" BorderBrush="#FF848484" Padding="0,0,0,0">
+                            <Button x:Name="viewb" HorizontalAlignment="Left" Margin="296,10,0,0" VerticalAlignment="Top" Width="32" Height="32" Background="#7FFFFFFF" BorderBrush="#FF848484" Padding="0,0,0,0">
                                 <Image Source="/img/close.png" Height="30" Width="30" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
                             </Button>
                             <Image Source="/img/clockicon.png" Margin="10,10,298,138" Width="24" Height="24" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"></Image>

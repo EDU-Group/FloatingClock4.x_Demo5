@@ -19,6 +19,7 @@ namespace xfsz4.x_Demo5
         public static Color CloseBorder;
         public static bool MainWindow_Top = false;
         public static bool ClockWindow_Top = false;
+        public static bool ColorPicker = false;
         public static DateTime StartTime;
         public static bool End = false;
         public static TimeSpan EndTime;

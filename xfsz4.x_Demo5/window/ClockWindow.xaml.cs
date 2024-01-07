@@ -33,6 +33,7 @@ namespace xfsz4.x_Demo5.window
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
+            log.LogW.NewInfoLog("已加载时钟程序");
             borderset();
             kfruit();
         }
@@ -52,6 +53,7 @@ namespace xfsz4.x_Demo5.window
                 {
                     this.Topmost = false;
                 }
+                Topmost = Pub.ClockWindow_Top;
                 viewtime.Text = DateTime.Now.ToString(Pub.Format[1]);
                 viewdate.Content = DateTime.Now.ToString(Pub.Format[0]);
                 viewborder.CornerRadius = new(Pub.Border[0], Pub.Border[1], Pub.Border[2], Pub.Border[3]);
@@ -61,16 +63,19 @@ namespace xfsz4.x_Demo5.window
 
         private void viewborder_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            log.LogW.NewInfoLog("移动窗口");
             this.DragMove();
         }
 
         private void viewtime_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            log.LogW.NewInfoLog("移动窗口");
             this.DragMove();
         }
 
         private void viewdate_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            log.LogW.NewInfoLog("移动窗口");
             this.DragMove();
         }
 
@@ -130,4 +135,5 @@ namespace xfsz4.x_Demo5.window
             return;
         }
     }
+
 }
