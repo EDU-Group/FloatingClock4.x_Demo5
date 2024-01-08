@@ -332,6 +332,9 @@
                                 <TranslateTransform/>
                             </TransformGroup>
                         </Grid.RenderTransform>
+                        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="41" Margin="0,0,354,127" Text="{Binding Value, ElementName=slider, StringFormat=\{0:F\}x}"></TextBlock>
+                        <TextBlock Text="缩放" Margin="0,0,420,145" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                        <Slider x:Name="slider" Margin="0,0,55,142" Background="Gainsboro" Maximum="1" Minimum="0.3" Value="1" SmallChange="0.001" LargeChange="0.01" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="358" ValueChanged="slider_ValueChanged"/>
                         <Button Width="115" HorizontalAlignment="Left" Margin="-1,-37,0,0" VerticalAlignment="Top" Background="#FFFBFBFB" BorderBrush="#FF8E8E8E" Content="恢复默认值"></Button>
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="377,455,0,0">重命名和新外观名称</TextBlock>
                         <hc:TextBox x:Name="rename" Margin="490,448,0,0" Background="#FFFBFBFB" BorderBrush="#FF8E8E8E" VerticalAlignment="Top" HorizontalAlignment="Left" Width="186" VerticalContentAlignment="Top"/>

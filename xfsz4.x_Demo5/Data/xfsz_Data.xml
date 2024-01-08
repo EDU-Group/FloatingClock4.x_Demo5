@@ -5,7 +5,7 @@
 	<Date Format="yyyy/MM/dd dddd" Font="[null]"/>
 	<Theme Name="xfsz:#3"/>
 	<Window Top="False"/>
-	<ClockWIndow Top="True" Lock="False" CloseWindowMode="Close" HoldTime="300"/>
+	<ClockWIndow Top="True" Lock="False" CloseWindowMode="Close" HoldTime="300" WindowZoom="1"/>
 	<Start Windows="False" ClockWindowMode="Close"/>
 	<Update Enable="True"/>
 	<Server Mode="IPv4"/>

@@ -34,6 +34,7 @@ namespace xfsz4.x_Demo5.window
             Paragraph para = new Paragraph();
             para.Inlines.Add(r);
             para.Background = info.Background;
+            para.Foreground = info.Foreground;
             para.FontSize = info.FontSize;
             para.BorderBrush = info.BorderBrush;
             para.BorderThickness = info.BorderThickness;
@@ -46,6 +47,7 @@ namespace xfsz4.x_Demo5.window
             Paragraph para = new Paragraph();
             para.Inlines.Add(r);
             para.Background = warn.Background;
+            para.Foreground = warn.Foreground;
             para.FontSize = warn.FontSize;
             para.BorderBrush = warn.BorderBrush;
             para.BorderThickness = warn.BorderThickness;
@@ -59,6 +61,7 @@ namespace xfsz4.x_Demo5.window
             para.Inlines.Add(r);
             para.Background = error.Background;
             para.FontSize = error.FontSize;
+            para.Foreground = error.Foreground;
             para.BorderBrush = error.BorderBrush;
             para.BorderThickness = error.BorderThickness;
             rtb.Document.Blocks.Add(para);
@@ -70,6 +73,7 @@ namespace xfsz4.x_Demo5.window
             Paragraph para = new Paragraph();
             para.Inlines.Add(r);
             para.Background = stop.Background;
+            para.Foreground = stop.Foreground;
             para.FontSize = stop.FontSize;
             para.BorderBrush = stop.BorderBrush;
             para.BorderThickness = stop.BorderThickness;

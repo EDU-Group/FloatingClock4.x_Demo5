@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:xfsz4.x_Demo5.window"
         mc:Ignorable="d"
-        Title="ClockWindow" Height="178" Width="340" WindowStyle="None" AllowsTransparency="True" Loaded="Window_Loaded_1" Background="{x:Null}" ResizeMode="NoResize" Closing="Window_Closing">
-    <Grid>
+        Title="ClockWindow" Height="178" Width="340" WindowStyle="None" AllowsTransparency="True" Loaded="Window_Loaded_1" Background="{x:Null}" ResizeMode="NoResize" Closing="Window_Closing" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True">
+    <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5">
+        <Grid.LayoutTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform AngleX="0"/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.LayoutTransform>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform x:Name="scax" ScaleX="1" ScaleY="1"/>
+                <SkewTransform AngleX="0"/>
+                <RotateTransform Angle="0"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
         <Border x:Name="viewborder" CornerRadius="16,16,16,16" MouseLeftButtonDown="viewborder_MouseLeftButtonDown">
             <Border.Background>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,1" MappingMode="RelativeToBoundingBox" SpreadMethod="Pad" Opacity="0.805">
@@ -17,7 +33,7 @@
         </Border>
         <Label x:Name="viewdate" Background="{x:Null}" BorderBrush="{x:Null}" Content="2024/1/1 星期一" FontSize="22" Margin="0,103,0,0" VerticalAlignment="Top" Height="40" Width="338" MouseLeftButtonDown="viewdate_MouseLeftButtonDown"></Label>
         <TextBlock x:Name="viewtime" Text="13:00:00" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,38,0,0" MouseLeftButtonDown="viewtime_MouseLeftButtonDown"></TextBlock>
-        <Button HorizontalAlignment="Left" Margin="296,10,0,0" VerticalAlignment="Top" Width="32" Height="32" Background="#7FFFFFFF" BorderBrush="#FF848484" Padding="0,0,0,0" Click="Button_Click">
+        <Button x:Name="viewb" HorizontalAlignment="Left" Margin="296,10,0,0" VerticalAlignment="Top" Width="32" Height="32" Background="#7FFFFFFF" BorderBrush="#FF848484" Padding="0,0,0,0" Click="Button_Click">
             <Image Source="/img/close.png" Height="30" Width="30" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
         </Button>
         <Image Source="/img/clockicon.png" Margin="10,10,298,138" Width="24" Height="24" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"></Image>

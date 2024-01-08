@@ -74,6 +74,7 @@ namespace xfsz4.x_Demo5
 
         private void Window_Initialized(object sender, EventArgs e)
         {
+            log.LogW.NewWarnLog("!!!-= 开始初始化 =-!!!");
             DateTime start = DateTime.Now;
             log.LogW.Show();
             log.LogW.NewInfoLog("准备启动");
@@ -129,6 +130,15 @@ namespace xfsz4.x_Demo5
             String ct = xfsz_xml.Xml.XmlReadNodeAttributeValue(Pub.Pach + @"\" + @"Data\xfsz_Data.xml", @"Data/ClockWIndow", "Top");
             Pub.ClockWindow_Top = Convert.ToBoolean(ct);
             log.LogW.NewInfoLog("时钟默认置顶:"+ct);
+            log.LogW.NewInfoLog("初始化默认颜色");
+            Pub.TimeColor = viewtime.Foreground;
+            Pub.DateColor = viewdate.Foreground;
+            Pub.CloseBGColor = viewb.Background;
+            Pub.CloseBorder = viewb.BorderBrush;
+            log.LogW.NewInfoLog("读Xml特定节点的属性WindowZoom");
+            String czm = xfsz_xml.Xml.XmlReadNodeAttributeValue(Pub.Pach + @"\" + @"Data\xfsz_Data.xml", @"Data/ClockWIndow", "WindowZoom");
+            log.LogW.NewInfoLog("初始化缩放倍数");
+            Pub.Zoom = Convert.ToInt32(czm);
             log.LogW.NewWarnLog("初始化结束,用时"+time.TotalMilliseconds+"ms");
 
         }
@@ -302,18 +312,22 @@ namespace xfsz4.x_Demo5
                 if(Colorc.SelectedIndex == 0)//时间字体
                 {
                     viewtime.Foreground = ColorPicker.SelectedBrush;
+                    Pub.TimeColor = viewtime.Foreground;
                 }
                 else if (Colorc.SelectedIndex == 1)//日期字体
                 {
                     viewdate.Foreground = ColorPicker.SelectedBrush;
+                    Pub.DateColor = viewdate.Foreground;
                 }
                 else if (Colorc.SelectedIndex == 2)//关闭按钮背景
                 {
                     viewb.Background = ColorPicker.SelectedBrush;
+                    Pub.CloseBGColor = viewb.Background;
                 }
                 else if (Colorc.SelectedIndex == 3)//关闭按钮边框
                 {
                     viewb.BorderBrush = ColorPicker.SelectedBrush;
+                    Pub.CloseBorder = viewb.BorderBrush;
                 }
                 else if (Colorc.SelectedIndex == 4)//纯色背景
                 {
@@ -363,6 +377,7 @@ namespace xfsz4.x_Demo5
                         if (!(viewtime == null))
                         {
                             viewtime.Foreground = ColorPicker.SelectedBrush;
+                            Pub.TimeColor = viewtime.Foreground;
                         }
                     }
                     else if (s == 1)//日期字体
@@ -370,6 +385,7 @@ namespace xfsz4.x_Demo5
                         if (!(viewdate == null))
                         {
                             viewdate.Foreground = ColorPicker.SelectedBrush;
+                            Pub.DateColor = viewdate.Foreground;
                         }
                     }
                     else if (s == 2)//关闭按钮背景
@@ -377,6 +393,7 @@ namespace xfsz4.x_Demo5
                         if (!(viewb == null))
                         {
                             viewb.Background = ColorPicker.SelectedBrush;
+                            Pub.CloseBGColor = viewb.Background;
                         }
                     }
                     else if (s == 3)//关闭按钮边框
@@ -384,6 +401,7 @@ namespace xfsz4.x_Demo5
                         if (!(viewb == null))
                         {
                             viewb.BorderBrush = ColorPicker.SelectedBrush;
+                            Pub.CloseBorder = viewb.BorderBrush;
                         }
                     }
                     else if (s == 4)//纯色背景
@@ -506,6 +524,11 @@ namespace xfsz4.x_Demo5
         private void CB_BGend(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Pub.Zoom = slider.Value;
         }
     }
     public class Exit

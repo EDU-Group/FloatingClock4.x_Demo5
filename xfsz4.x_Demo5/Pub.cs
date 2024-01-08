@@ -5,18 +5,21 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using xfsz_xml;
 
 namespace xfsz4.x_Demo5
 {
     internal class Pub
     {
-        public static Color DateColor;
-        public static Color TimeColor;
-        public static Color BGColorS;
-        public static Color BGColorE;
-        public static Color CloseBGColor;
-        public static Color CloseBorder;
+        public static Brush? DateColor;
+        public static Brush? TimeColor;
+        public static Brush? BGColorS;
+        public static Brush? BGColorE;
+        public static Brush? CloseBGColor;
+        public static Brush? CloseBorder;
+        public static Brush? BG;
+        public static double Zoom;
         public static bool MainWindow_Top = false;
         public static bool ClockWindow_Top = false;
         public static bool ColorPicker = false;

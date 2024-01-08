@@ -54,6 +54,13 @@ namespace xfsz4.x_Demo5.window
                     this.Topmost = false;
                 }
                 Topmost = Pub.ClockWindow_Top;
+                scax.ScaleX = Pub.Zoom;
+                scax.ScaleY = Pub.Zoom;
+                viewtime.Foreground = Pub.TimeColor;
+                viewdate.Foreground = Pub.DateColor;
+                viewb.Background = Pub.CloseBGColor;
+                viewb.BorderBrush = Pub.CloseBorder;
+                //viewborder.Background = Pub.BG;
                 viewtime.Text = DateTime.Now.ToString(Pub.Format[1]);
                 viewdate.Content = DateTime.Now.ToString(Pub.Format[0]);
                 viewborder.CornerRadius = new(Pub.Border[0], Pub.Border[1], Pub.Border[2], Pub.Border[3]);
