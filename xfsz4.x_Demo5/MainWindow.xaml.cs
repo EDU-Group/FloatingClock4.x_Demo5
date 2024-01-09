@@ -68,6 +68,7 @@ namespace xfsz4.x_Demo5
                 Pub.Border[1] = topright.Value;
                 Pub.Border[2] = bottonright.Value;
                 Pub.Border[3] = bottonleft.Value;
+                viewborder.Background = (Brush)Application.Current.TryFindResource(Pub.CTheme);
                 await Task.Delay(50);
             }
         }
@@ -236,6 +237,7 @@ namespace xfsz4.x_Demo5
         private void window_Closed(object sender, EventArgs e)
         {
             Pub.End = true;
+            
         }
 
         private void CheckBox_Click_1(object sender, RoutedEventArgs e)
@@ -523,12 +525,76 @@ namespace xfsz4.x_Demo5
 
         private void CB_BGend(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             Pub.Zoom = slider.Value;
+        }
+
+        private void ComboBox_Selected(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void summer_Selected(object sender, RoutedEventArgs e)
+        {
+            Pub.CTheme = "summer";
+            log.LogW.NewInfoLog("外观库更改:" + Pub.CTheme);
+        }
+
+        private void yellowpink_Selected(object sender, RoutedEventArgs e)
+        {
+            Pub.CTheme = "yellowpink";
+            log.LogW.NewInfoLog("外观库更改:" + Pub.CTheme);
+        }
+
+        private void sport_Selected(object sender, RoutedEventArgs e)
+        {
+            Pub.CTheme = "sport";
+            log.LogW.NewInfoLog("外观库更改:" + Pub.CTheme);
+        }
+
+        private void hotandcold_Selected(object sender, RoutedEventArgs e)
+        {
+            Pub.CTheme = "hotandcold";
+            log.LogW.NewInfoLog("外观库更改:" + Pub.CTheme);
+        }
+
+        private void ice_Selected(object sender, RoutedEventArgs e)
+        {
+            Pub.CTheme = "ice";
+            log.LogW.NewInfoLog("外观库更改:" + Pub.CTheme);
+        }
+
+        private void sun_Selected(object sender, RoutedEventArgs e)
+        {
+            Pub.CTheme = "sun";
+            log.LogW.NewInfoLog("外观库更改:" + Pub.CTheme);
+        }
+
+        private void magic_Selected(object sender, RoutedEventArgs e)
+        {
+            Pub.CTheme = "magic";
+            log.LogW.NewInfoLog("外观库更改:" + Pub.CTheme);
+        }
+
+        private void genshin_Selected(object sender, RoutedEventArgs e)
+        {
+            Pub.CTheme = "genshin";
+            log.LogW.NewInfoLog("外观库更改:" + Pub.CTheme);
+        }
+
+        private void gs01_Selected(object sender, RoutedEventArgs e)
+        {
+            Pub.CTheme = "gskkkkk";
+            log.LogW.NewInfoLog("外观库更改:" + Pub.CTheme);
+        }
+
+        private void checkbox_clocktopppp_Click(object sender, RoutedEventArgs e)
+        {
+            Pub.ClockWindow_Topttt = !Pub.ClockWindow_Topttt;
         }
     }
     public class Exit

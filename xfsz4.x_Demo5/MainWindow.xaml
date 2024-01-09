@@ -371,15 +371,19 @@
                         </Border>
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="419,162,0,0">外观库</TextBlock>
                         <hc:ComboBox Margin="469,155,0,0" Background="#FFFBFBFB" BorderBrush="#FF8E8E8E" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="206">
-                            <hc:CheckComboBoxItem Content="xfsz-渐变色#3"/>
-                            <hc:CheckComboBoxItem Content="xfsz-渐变色#1"/>
-                            <hc:CheckComboBoxItem Content="xfsz-渐变色#2"/>
-                            <hc:CheckComboBoxItem Content="xfsz-明亮白色"/>
-                            <hc:CheckComboBoxItem Content="zfsz-阴暗黑色"/>
-                            <hc:CheckComboBoxItem Content="xfsz-无背景"/>
+                            <ComboBoxItem x:Name="summer" Content="夏日" Selected="summer_Selected"/>
+                            <ComboBoxItem x:Name="yellowpink" Content="黄紫色" Selected="yellowpink_Selected"/>
+                            <ComboBoxItem x:Name="sport" Content="运动" Selected="sport_Selected"/>
+                            <ComboBoxItem x:Name="hotandcold" Content="炎热与冰凉" Selected="hotandcold_Selected"/>
+                            <ComboBoxItem x:Name="ice" Content="冰块" Selected="ice_Selected"/>
+                            <ComboBoxItem x:Name="sun" Content="日光" Selected="sun_Selected"/>
+                            <ComboBoxItem x:Name="magic" Content="魔法" Selected="magic_Selected"/>
+                            <ComboBoxItem x:Name="genshin" Content="原" Selected="genshin_Selected"/>
+                            <ComboBoxItem x:Name="gs01" Content="原2" Selected="gs01_Selected"/>
                         </hc:ComboBox>
                         <CheckBox Content="锁定时钟窗口" Margin="349,57,589,0" Height="31" VerticalAlignment="Top" ToolTip="锁定后，时钟窗口无法交互" HorizontalAlignment="Left"></CheckBox>
                         <CheckBox x:Name="checkbox_clocktop" Content="置顶时钟窗口" Margin="349,88,589,0" Height="31" VerticalAlignment="Top" IsChecked="True" ToolTip="显示在所有窗口的最前面" HorizontalAlignment="Left" Click="CheckBox_Click_1"></CheckBox>
+                        <CheckBox x:Name="checkbox_clocktopppp" Content="启用强置顶(不推荐)" Margin="456,88,0,0" Height="31" VerticalAlignment="Top" IsChecked="False" ToolTip="强制显示在已置顶窗口的上面，可能导致时钟闪烁" HorizontalAlignment="Left" Click="checkbox_clocktopppp_Click"></CheckBox>
                         <CheckBox x:Name="checkBox" Content="关闭后暂时隐藏" Margin="349,119,669,0" Height="31" VerticalAlignment="Top" ToolTip="点击关闭后，时钟会隐藏一段时间后再次显示" IsChecked="True" Click="checkBox_Click_2"/>
                         <hc:NumericUpDown x:Name="numericUpDown" Margin="469,120,0,0" BorderBrush="#FF8E8E8E" VerticalAlignment="Top" VerticalContentAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}" HorizontalAlignment="Left" Width="81" Background="#FFFBFBFB" Minimum="1" Value="300" ValueChanged="numericUpDown_ValueChanged"/>
                         <TextBlock Text="秒" Margin="555,127,509,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
@@ -401,14 +405,7 @@
                         </ComboBox>
                         <Label Background="{x:Null}" BorderBrush="{x:Null}" Content="效果预览" HorizontalAlignment="Right" Margin="0,240,174,0" VerticalAlignment="Top" FontSize="20" Height="43" Width="102"/>
                         <Grid x:Name="view" Margin="0,55,55,0" Width="340" HorizontalAlignment="Right" Height="178" VerticalAlignment="Top">
-                            <Border x:Name="viewborder" CornerRadius="16,16,16,16">
-                                <Border.Background>
-                                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,1" MappingMode="RelativeToBoundingBox" SpreadMethod="Pad">
-                                        <GradientStop Color="#FFF9E45A"/>
-                                        <GradientStop Color="#FF8BC5D4" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </Border.Background>
-                            </Border>
+                            <Border x:Name="viewborder" CornerRadius="16,16,16,16" Background="{DynamicResource gs}" Opacity="0.8"/>
                             <Label x:Name="viewdate" Background="{x:Null}" BorderBrush="{x:Null}" Content="2024/1/1 星期一" FontSize="22" Margin="0,103,0,0" VerticalAlignment="Top" Height="40" Width="338"></Label>
                             <TextBlock x:Name="viewtime" Text="13:00:00" FontSize="64" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,38,0,0"></TextBlock>
                             <Button x:Name="viewb" HorizontalAlignment="Left" Margin="296,10,0,0" VerticalAlignment="Top" Width="32" Height="32" Background="#7FFFFFFF" BorderBrush="#FF848484" Padding="0,0,0,0">

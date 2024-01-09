@@ -56,6 +56,7 @@
     <None Remove="img\page.png" />
     <None Remove="img\play.png" />
     <None Remove="img\plug.png" />
+    <None Remove="img\poster.47f71d4.jpg" />
     <None Remove="img\rename.png" />
     <None Remove="img\run.png" />
     <None Remove="img\run2.png" />
@@ -77,6 +78,8 @@
     <None Remove="img\window.png" />
     <None Remove="img\window1.png" />
     <None Remove="run.png" />
+    <None Remove="window\8d4e533df874da23cf6e7f451be57dca_944877516421628953.png" />
+    <None Remove="window\fce1d16c579c77c03355d9562118f49c_593442292911999496.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -105,6 +108,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\plug.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\poster.47f71d4.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\rename.png">
@@ -214,10 +220,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="run.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Themes\" />
+    <Resource Include="window\8d4e533df874da23cf6e7f451be57dca_944877516421628953.png" />
+    <Resource Include="window\fce1d16c579c77c03355d9562118f49c_593442292911999496.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -229,6 +233,12 @@
     <None Update="Data\xfsz_Data.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\ClockDefaultTheme.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
   </ItemGroup>
 
 </Project>

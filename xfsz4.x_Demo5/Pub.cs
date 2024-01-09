@@ -22,11 +22,13 @@ namespace xfsz4.x_Demo5
         public static double Zoom;
         public static bool MainWindow_Top = false;
         public static bool ClockWindow_Top = false;
+        public static bool ClockWindow_Topttt = false;
         public static bool ColorPicker = false;
         public static DateTime StartTime;
         public static bool End = false;
         public static TimeSpan EndTime;
         public static int Close = 300;
+        public static string CTheme = "summer";
         public static bool Closing = false;
         public static DateTime CloseTime;
         public static TimeSpan OpenTime;

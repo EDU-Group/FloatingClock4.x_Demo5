@@ -29,6 +29,7 @@ namespace xfsz4.x_Demo5.window
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             borderset();
+            viewborder.Background = (Brush)Application.Current.TryFindResource("sun");
         }
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
@@ -36,6 +37,7 @@ namespace xfsz4.x_Demo5.window
             log.LogW.NewInfoLog("已加载时钟程序");
             borderset();
             kfruit();
+
         }
         async void borderset()
         {
@@ -48,11 +50,18 @@ namespace xfsz4.x_Demo5.window
                 if(Pub.ClockWindow_Top==true)
                 {
                     this.Topmost = true;
+                    if(Pub.ClockWindow_Topttt == true)
+                    {
+                        this.Topmost = true;
+                        this.Topmost = false;
+
+                    }
                 }
                 else
                 {
                     this.Topmost = false;
                 }
+                viewborder.Background = (Brush)Application.Current.FindResource(Pub.CTheme);
                 Topmost = Pub.ClockWindow_Top;
                 scax.ScaleX = Pub.Zoom;
                 scax.ScaleY = Pub.Zoom;
