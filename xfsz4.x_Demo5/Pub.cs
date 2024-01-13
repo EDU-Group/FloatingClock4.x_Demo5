@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using xfsz_xml;
+using xfsz4.x_Demo5.window;
 
 namespace xfsz4.x_Demo5
 {
@@ -19,6 +20,8 @@ namespace xfsz4.x_Demo5
         public static Brush? CloseBGColor;
         public static Brush? CloseBorder;
         public static Brush? BG;
+        public static string ErrorInfo;
+        public static bool Error;
         public static double Zoom;
         public static bool MainWindow_Top = false;
         public static bool ClockWindow_Top = false;
@@ -38,5 +41,9 @@ namespace xfsz4.x_Demo5
         public static double[] Border = { 16, 16, 16, 16 }; 
         public static string Pach = System.AppDomain.CurrentDomain.BaseDirectory;
         public static string[] Format = { "yyyy/MM/dd dddd", "hh:mm:ss" };
+    }
+    internal class ERR
+    {
+        public static ErrorWindow ew = new();
     }
 }

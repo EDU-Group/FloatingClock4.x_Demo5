@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System.Diagnostics;
 using System.DirectoryServices.ActiveDirectory;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -595,6 +596,29 @@ namespace xfsz4.x_Demo5
         private void checkbox_clocktopppp_Click(object sender, RoutedEventArgs e)
         {
             Pub.ClockWindow_Topttt = !Pub.ClockWindow_Topttt;
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            Visibility = Visibility.Visible;
+        }
+
+        private void window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            Visibility = Visibility.Collapsed;
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            new ToastContentBuilder()
+            .AddArgument("action", "viewConversation")
+            .AddArgument("conversationId", 9813)
+            .AddText("Andrew sent you a picture")
+            .AddText("Check this out, The Enchantments in Washington!");
+            //.Show(); // Not seeing the Show() method? Make sure you have version 7.0, and if you're using .NET 6 (or later), then your TFM must be net6.0-windows10.0.17763.0 or greater
+            Application.Current.Shutdown();
+
         }
     }
     public class Exit

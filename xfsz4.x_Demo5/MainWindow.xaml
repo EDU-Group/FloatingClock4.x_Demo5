@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:xfsz4.x_Demo5"
         mc:Ignorable="d"
         Title="悬浮时钟-Rabbit" Height="680" Width="1160"
-        xmlns:hc="https://handyorg.github.io/handycontrol" Icon="/img/clock.png" WindowStartupLocation="CenterScreen" MinWidth="1160" MinHeight="684" Initialized="Window_Initialized" Closed="window_Closed" Loaded="Window_Loaded">
+        xmlns:hc="https://handyorg.github.io/handycontrol" Icon="/img/clock.png" WindowStartupLocation="CenterScreen" MinWidth="1160" MinHeight="684" Initialized="Window_Initialized" Closed="window_Closed" Loaded="Window_Loaded" Closing="window_Closing">
     <Window.Resources>
         <Storyboard x:Key="a_home_start">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
@@ -156,6 +156,22 @@
         </Storyboard>
     </Window.Resources>
     <DockPanel>
+        <hc:NotifyIcon x:Name="NotifyIconContextContent" 
+                   Text="悬浮时钟"
+                   Visibility="Visible"
+                   Icon="/img/clockicon.png" RenderOptions.BitmapScalingMode="Fant">
+            <hc:NotifyIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Command="hc:ControlCommands.PushMainWindow2Top" Header="打开主窗口" Click="MenuItem_Click_1"/>
+                    <MenuItem Command="hc:ControlCommands.ShutdownApp" Header="退出所有" Click="MenuItem_Click_2"/>
+                </ContextMenu>
+            </hc:NotifyIcon.ContextMenu>
+            <hc:Interaction.Triggers>
+                <hc:EventTrigger EventName="Click">
+                    <hc:EventToCommand Command="hc:ControlCommands.PushMainWindow2Top"/>
+                </hc:EventTrigger>
+            </hc:Interaction.Triggers>
+        </hc:NotifyIcon>
         <Menu DockPanel.Dock="Top" Height="30" Background="#FFE8E4E4" BorderBrush="#FF505050">
             <MenuItem Header="文件">
                 <MenuItem x:Name="save" Header="保存">

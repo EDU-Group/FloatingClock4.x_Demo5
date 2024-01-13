@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -28,6 +29,7 @@ namespace xfsz4.x_Demo5.window
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //弃用
             borderset();
             viewborder.Background = (Brush)Application.Current.TryFindResource("sun");
         }
@@ -37,8 +39,16 @@ namespace xfsz4.x_Demo5.window
             log.LogW.NewInfoLog("已加载时钟程序");
             borderset();
             kfruit();
-
+            log.LogW.NewInfoLog("播放动画:a_clockopem");
+            Open();
         }
+        private async void Open ()
+        {
+            var Opena = FindResource("a_clockopen") as Storyboard; Opena.Begin();
+            await Task.Delay(500);
+            Opena.Stop();
+        }
+
         async void borderset()
         {
             while (true)

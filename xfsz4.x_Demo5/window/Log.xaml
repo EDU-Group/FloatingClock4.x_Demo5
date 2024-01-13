@@ -5,11 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:xfsz4.x_Demo5.window"
         mc:Ignorable="d"
-        Title="Log" Height="450" Width="800" Loaded="Window_Loaded" Topmost="{Binding IsChecked, ElementName=checkBox}" Background="#FF2E2E2E">
+        Title="Log" Height="475" Width="800" Loaded="Window_Loaded" Topmost="{Binding IsChecked, ElementName=checkBox}" Background="{x:Null}" WindowStyle="None" AllowsTransparency="True" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <Storyboard x:Key="a_logadd"/>
+    </Window.Resources>
     <Grid>
-        <RichTextBox x:Name="rtb" Margin="10,10,10,50" FontSize="12" FontFamily="Cascadia Code" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Background="#FF3A3A3A" BorderBrush="#FF505050" Padding="0,7,2,7" ScrollViewer.CanContentScroll="True">
+        <Border Background="#FF2E2E2E" CornerRadius="8,8,8,8"></Border>
+        <Border Background="#FF4A4A4A" CornerRadius="8,8,0,0" VerticalAlignment="Top" Height="30" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid>
+                <Button HorizontalAlignment="Left" Margin="772,0,0,0" Width="25" Height="26" Background="#FF565454" BorderBrush="#FF757575" Padding="0,0,0,0" Click="Button_Click_3">
+                    <Image Source="/img/close.png" RenderOptions.BitmapScalingMode="Fant" Margin="0.5,0,0,0"></Image>
+                </Button>
+                <TextBlock Foreground="White" Margin="16,8,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">日志记录器</TextBlock>
+            </Grid>
+        </Border>
+        <RichTextBox x:Name="rtb" Margin="10,40,10,50" FontSize="12" FontFamily="Cascadia Code" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Background="#FF3A3A3A" BorderBrush="#FF505050" Padding="0,7,2,7" ScrollViewer.CanContentScroll="True">
             <FlowDocument Focusable="True" LineHeight="4">
-                <Paragraph x:Name="info" Background="#FF565656" BorderBrush="#FF928282" BorderThickness="8,2,2,2" FontSize="14" Foreground="#FFF1F1F1">(13:00:00)[Info]日志测试-消息</Paragraph>
+                <Paragraph x:Name="info" Background="#FF565656" BorderBrush="#FF928282" BorderThickness="8,2,2,2" FontSize="14" Foreground="#FFF1F1F1" Margin="0,0,0,0">(13:00:00)[Info]日志测试-消息</Paragraph>
                 <Paragraph x:Name="warn" Background="#FF966029" BorderBrush="#FFDC843A" BorderThickness="8,2,2,2" FontSize="14" Foreground="White">(13:00:00)[Warn]日志测试-警告</Paragraph>
                 <Paragraph x:Name="error" Background="#FFB13939" BorderBrush="#FFCE1F1F" BorderThickness="8,2,2,2" FontSize="14" Foreground="White">(13:00:00)[Error]日志测试-错误</Paragraph>
                 <Paragraph x:Name="stop" Background="#FF460808" BorderBrush="#FF2F0505" BorderThickness="8,2,2,2" FontSize="14" Foreground="White">(13:00:00)[Stop]日志测试-无法继续运行</Paragraph>

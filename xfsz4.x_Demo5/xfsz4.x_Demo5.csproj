@@ -7,6 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64;x86</Platforms>
+    <ApplicationIcon>img\ClockIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -68,7 +69,6 @@
     <None Remove="img\show1x.png" />
     <None Remove="img\show2.png" />
     <None Remove="img\social_massage_04.png" />
-    <None Remove="img\SplachScreen.png" />
     <None Remove="img\ui_hexagon_minus.png" />
     <None Remove="img\ui_logout.png" />
     <None Remove="img\ui_setting_01.png" />
@@ -80,15 +80,17 @@
     <None Remove="run.png" />
     <None Remove="window\8d4e533df874da23cf6e7f451be57dca_944877516421628953.png" />
     <None Remove="window\fce1d16c579c77c03355d9562118f49c_593442292911999496.jpg" />
+    <None Remove="画板 1%400.3x.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <SplashScreen Include="img\SplachScreen.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <SplashScreen Include="画板 1@0.3x.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </SplashScreen>
     <Content Include="img\about.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="img\ClockIcon.ico" />
     <Content Include="img\clockicon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -159,6 +161,7 @@
 
   <ItemGroup>
     <PackageReference Include="HandyControl" Version="3.4.0" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -225,12 +228,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\fc_AddonsCore\fc_AddonsCore.csproj" />
+    <ProjectReference Include="..\fc_Addons\fc_Addons.csproj" />
+    <ProjectReference Include="..\xfsz_AddonsClockWindow\xfsz_AddonsClockWindow.csproj" />
     <ProjectReference Include="..\xfsz_Core\xfsz_Core.csproj" />
     <ProjectReference Include="..\xfsz_xml\xfsz_xml.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="Data\xfsz_Data.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="img\SplachScreen.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
