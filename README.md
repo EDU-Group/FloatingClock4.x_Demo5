@@ -2,7 +2,7 @@
 ### xfsz4.x_Demo5
 Windows上的悬浮时钟程序，目前还不是正式版  
 > ⚠️注意  
-> 查看最新版和开发进度，请前往 [RabbitGit](http://http://rabbitshr.dynv6.net:3000/kfruit/FloctingClock4.0)  
+> 查看最新版和开发进度，请前往 [RabbitGit](http://rabbitshr.dynv6.net:3000/kfruit/FloctingClock4.0)  
 > 仅在GitHub上发布正式版
   
 # 悬浮时钟
